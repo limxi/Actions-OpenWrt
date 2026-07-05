@@ -1,4 +1,4 @@
-name: UBOOT-XR30-EMMC Builder
+name: MT7981-eMMC-UBOOT-hanwckf
 
 on:
     workflow_dispatch:
