@@ -42,7 +42,7 @@ jobs:
               run: |
                 cd uboot
                 chmod +x build.sh
-                SOC=mt7981 BOARD=cmcc_xr30 ./build.sh
+                SOC=mt7981 BOARD=cmcc_xr30-emmc ./build.sh
                 ls -lsh /workdir/uboot/output
                 echo "status=success" >> $GITHUB_OUTPUT
                 echo "COMPILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
@@ -51,6 +51,6 @@ jobs:
               if: steps.build.outcome == 'success' && !cancelled()
               uses: actions/upload-artifact@main
               with:
-                name: CMCC-XR30-Uboot-${{ env.COMPILE_DATE }}
+                name: CMCC-XR30-EMMC-Uboot-${{ env.COMPILE_DATE }}
                 path: /workdir/uboot/output
                 
